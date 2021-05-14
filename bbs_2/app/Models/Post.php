@@ -12,5 +12,5 @@ class Post extends Model
         'body'=> 'required'
     ];
 
-    protected $fillable =['title', 'body', 'thumbnail'];
+    protected $fillable =['title', 'body','thumbnail'];
 }

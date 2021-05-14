@@ -22,10 +22,10 @@ class LoginController extends Controller{
         if(! auth()->attempt($credentials)){    
             return "로그인정보가 정확하지 않습니다.";
         }else{
-            $posts= Post::all();
+            $posts= Post::orderBy('created_at', 'desc')->paginate(5);
             $login=auth()->user();
             return view('post.index', compact('posts', 'login'));
-            //return view('post.index',['rows'=>$rows,'login'=>auth()->user()]);
+           
         }
        
     }

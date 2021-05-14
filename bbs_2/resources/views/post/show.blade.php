@@ -2,10 +2,14 @@
 @section('content')
 
 <h1>{{$posts -> title}}</h1>
-<h3>{{$posts -> body}}</h3>
-<h6>작성자 : {{$posts -> thumbnail}}</h6>
+
+<article>{{$posts -> body}}</article>
+<a href="{{ url('/download/$posts -> thumbnail/$posts -> thumbnail')}}">{{$posts -> thumbnail}}</a>
+
+<br>
+<h8>작성자 : {{$posts -> username}}</h8>
 <br><br>
-<a href="{{ route('post.edit', $posts -> id, )}}" class="btn btn-primary"> 글 수정 </a>
+<a href="{{ route('post.edit', $posts -> id )}}" class="btn btn-primary"> 글 수정 </a>
 <br><br>
 <form method="POST" action="{{ route('post.destroy', $posts -> id)}}">
 @method('DELETE')
