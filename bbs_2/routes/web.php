@@ -22,7 +22,7 @@ Route::resource('/login','App\Http\Controllers\LoginController');
 
 Route::resource('/post','App\Http\Controllers\PostController');
 
-Route::get('/download/{originFilename}/{saveFilename}', function ($originFileName, $saveFileName) {
+Route::get('/download/123', function ($originFileName, $saveFileName) {
 
     $originFileName = base64_decode($originFileName);
  
@@ -32,5 +32,13 @@ Route::get('/download/{originFilename}/{saveFilename}', function ($originFileNam
  
  });
 
- Route::resource('/search','App\Http\Controllers\SearchController');
+Route::resource('/search','App\Http\Controllers\SearchController');
+// Route::resource('/social/{provider}','App\Http\Controllers\SocialController');
+
+
+Route::get('/social/{provider}', 'App\Http\Controllers\SocialController@redirectToProvider');
+Route::get('/social/{provider}/callback', 'App\Http\Controllers\SocialController@handleProviderCallback');
+
+// Route::get('/naver', 'App\Http\Controllers\SocialController@redirectToProvider');
+// Route::get('/naver', 'App\Http\Controllers\SocialController@handleProviderCallback');
 

@@ -24,8 +24,8 @@ class LoginController extends Controller{
         }else{
             $posts= Post::orderBy('created_at', 'desc')->paginate(5);
             $login=auth()->user();
-            return view('post.index', compact('posts', 'login'));
-           
+            //return view('/post/post.index', compact('posts', 'login'));
+            return redirect() -> route('post.index', compact('posts', 'login'));
         }
        
     }

@@ -17,5 +17,11 @@ password
 <button type="submit" class="btn btn-primary">로그인</button>
 </form>
 <br>
+<br>
+<a href="{{ url('/social/kakao')}}">카카오톡</a>으로 로그인<br><br>
+<a href="{{ url('/social/google')}}">구글로 </a>로그인<br><br>
+<a href="{{ url('/social/facebook')}}">페이스북</a>으로 로그인<br><br>
+<a href="{{url('/social/naver')}}">네이버</a>로 로그인<br><br>
+<br>
 <a href="{{ route('register.index')}}" class="btn btn-primary">회원가입</a>
 @stop

@@ -1,10 +1,10 @@
 @extends('layouts.master')
 @section('content')
 
-<h1>{{$posts -> title}}</h1>
+<h1>{{$posts -> title}}...</h1>
 
 <article>{{$posts -> body}}</article>
-<a href="{{ url('/download/$posts -> thumbnail/$posts -> thumbnail')}}">{{$posts -> thumbnail}}</a>
+<a href="{{ url('/download/123?img='.$posts -> thumbnail.'&img2='.$posts -> thumbnail)}}">{{$posts -> thumbnail}}</a>
 
 <br>
 <h8>작성자 : {{$posts -> username}}</h8>

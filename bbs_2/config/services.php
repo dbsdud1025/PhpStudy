@@ -30,4 +30,29 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'kakao'=> [
+        'client_id'=> env('KAKAO_KEY'),
+        'client_secret'=> env('KAKAO_SECRET'),
+        'redirect'=>env('KAKAO_REDIRECT_URI')
+    ], 
+
+    'goolge'=> [
+        'client_id'=> env('GOOGLE_CLIENT_ID'),
+        'client_secret'=> env('GOOGLE_CLIENT_SECRET'),
+        'redirect'=>env('GOOGLE_REDIRECT')
+    ], 
+
+    'naver' => [
+        'client_id' => env('NAVER_KEY'),
+        'client_secret' => env('NAVER_SECRET'),
+        'redirect' => env('NAVER_REDIRECT_URI'),
+    ],
+    
+    'facebook'=> [
+        'client_id'=> env('FACEBOOK_CLIENT_ID'),
+        'client_secret'=> env('FACEBOOK_CLIENT_SECRET'),
+        'redirect'=>env('FACEBOOK_REDIRECT')
+    ], 
+
+
 ];

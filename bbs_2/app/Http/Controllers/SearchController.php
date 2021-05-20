@@ -18,7 +18,7 @@ class SearchController extends Controller
     
     public function index(Request $request){
         $search = $request->input('search');
-        $posts= DB::select("select * from posts where title LIKE ?", [$search]);
+        $posts= DB::select("select * from posts where title LIKE ? ", [$search]);
         $login=auth()->user();
         
         return view('post.search', compact('posts', 'login','search'));
@@ -26,7 +26,9 @@ class SearchController extends Controller
     }
     public function store(Request $request){
         $search = $request->input('search');
-        $posts= DB::select("select * from posts where title LIKE ?", [$search]);
+        //$posts= DB::select("select * from posts where title LIKE ? ", [$search]);
+        $posts = DB::table('posts')->where('title','LIKE',$search)
+        ->get();
         $login=auth()->user();
         
         return view('post.search', compact('posts', 'login','search'));
