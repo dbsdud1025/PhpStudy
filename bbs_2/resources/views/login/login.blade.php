@@ -18,10 +18,10 @@ password
 </form>
 <br>
 <br>
-<a href="{{ url('/social/kakao')}}">카카오톡</a>으로 로그인<br><br>
-<a href="{{ url('/social/google')}}">구글로 </a>로그인<br><br>
-<a href="{{ url('/social/facebook')}}">페이스북</a>으로 로그인<br><br>
-<a href="{{url('/social/naver')}}">네이버</a>로 로그인<br><br>
+<a href="/social/kakao">카카오톡</a>로그인<br><br>
+<a href="/social/google">구글 </a>로그인<br><br>
+<a href="/social/facebook">페이스북</a>로그인<br><br>
+<a href="/social/naver">네이버</a>로그인<br><br>
 <br>
 <a href="{{ route('register.index')}}" class="btn btn-primary">회원가입</a>
 @stop

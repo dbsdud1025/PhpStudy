@@ -36,10 +36,10 @@ return [
         'redirect'=>env('KAKAO_REDIRECT_URI')
     ], 
 
-    'goolge'=> [
-        'client_id'=> env('GOOGLE_CLIENT_ID'),
-        'client_secret'=> env('GOOGLE_CLIENT_SECRET'),
-        'redirect'=>env('GOOGLE_REDIRECT')
+    'google'=> [
+        'client_id'=> env('GOOGLE_KEY'),
+        'client_secret'=> env('GOOGLE_SECRET'),
+        'redirect'=>env('GOOGLE_REDIRECT_URI'),
     ], 
 
     'naver' => [

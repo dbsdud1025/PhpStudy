@@ -16,6 +16,7 @@
         "socialiteproviders/facebook": "^4.1",
         "socialiteproviders/google": "^4.1",
         "socialiteproviders/kakao": "^4.2",
+        "socialiteproviders/manager": "^4.0",
         "socialiteproviders/naver": "^4.1"
     },
     "require-dev": {
