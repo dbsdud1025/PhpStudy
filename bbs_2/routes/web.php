@@ -22,7 +22,7 @@ Route::resource('/login','App\Http\Controllers\LoginController');
 
 Route::resource('/post','App\Http\Controllers\PostController');
 
-Route::get('/download/123', function ($originFileName, $saveFileName) {
+Route::get('/download/{$originFileName}/{$saveFileName}', function ($originFileName, $saveFileName) {
 
     $originFileName = base64_decode($originFileName);
  
