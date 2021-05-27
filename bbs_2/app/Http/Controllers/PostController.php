@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 class PostController extends Controller
 {
     public function index(){
-            $posts= Post::orderBy('created_at', 'desc')->paginate(5);
+            $posts= Post::orderBy('created_at', 'desc')->Paginate(5);
             $login=auth()->user();
             return view('post.index', compact('posts', 'login'));
         

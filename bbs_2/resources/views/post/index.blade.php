@@ -22,7 +22,11 @@
         
     @endforeach
 </ul>
+
+<div class="text-center">
 {!! $posts->render() !!}
+</div>
+
 
 <h3>
     <a href="{{ route('post.create')}}" class="btn btn-primary"> 글 작성 </a>

@@ -3,8 +3,8 @@
 
 <h1>{{$posts -> title}}...</h1>
 
-<article>{{$posts -> body}}</article>
-<a href="{{ url('/download/$posts -> thumbnail/$posts -> thumbnail')}}">{{$posts -> thumbnail}}</a>
+<h3>{{$posts -> body}}</h3>
+<a href="/download/{{$posts -> thumbnail}}">{{$posts -> thumbnail}}</a>
 
 <br>
 <h8>작성자 : {{$posts -> username}}</h8>

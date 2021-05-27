@@ -17,5 +17,8 @@
         
     @endforeach
 </ul>
+<div class="text-center">
+{!! $posts->render() !!}
+</div>
 
 @stop

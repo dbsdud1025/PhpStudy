@@ -22,15 +22,13 @@ Route::resource('/login','App\Http\Controllers\LoginController');
 
 Route::resource('/post','App\Http\Controllers\PostController');
 
-Route::get('/download/{$originFileName}/{$saveFileName}', function ($originFileName, $saveFileName) {
+Route::get('/download/{originFileName}', function ($originFileName) {
+    // $originFileName = base64_decode($originFileName);
 
-    $originFileName = base64_decode($originFileName);
- 
-    $saveFileName = storage_path().base64_decode($saveFileName);
- 
-    return response()->download($saveFileName, $originFileName);
- 
- });
+    $file=storage_path()."\\files\\"."$originFileName";
+
+    return response()->download($file,$originFileName);
+});
 
 Route::resource('/search','App\Http\Controllers\SearchController');
 

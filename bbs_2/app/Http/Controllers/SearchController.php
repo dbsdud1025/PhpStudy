@@ -18,8 +18,8 @@ class SearchController extends Controller
     
     public function index(Request $request){
         $search = $request->input('search');
-       
-        $posts = DB::table('posts')->where('title','LIKE','%'.$search.'%')->get();
+        
+        $posts = DB::table('posts')->where('title','LIKE','%'.$search.'%')->Paginate(5)->get();
         
         $login=auth()->user();
         
@@ -28,7 +28,7 @@ class SearchController extends Controller
     public function store(Request $request){
         $search = $request->input('search');
        
-        $posts = DB::table('posts')->where('title','LIKE','%'.$search.'%')->get();
+        $posts = DB::table('posts')->where('title','LIKE','%'.$search.'%')->Paginate(1);
         
         $login=auth()->user();
     
