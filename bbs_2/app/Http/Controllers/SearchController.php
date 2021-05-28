@@ -16,19 +16,19 @@ use Illuminate\Support\Facades\Storage;
 class SearchController extends Controller
 {
     
-    public function index(Request $request){
-        $search = $request->input('search');
+    // public function index(Request $request){
+    //     $search = $request->input('search');
         
-        $posts = DB::table('posts')->where('title','LIKE','%'.$search.'%')->Paginate(5)->get();
+    //     $posts = DB::table('posts')->where('title','LIKE','%'.$search.'%')->Paginate(3);
         
-        $login=auth()->user();
+    //     $login=auth()->user();
         
-        return View('post.search', compact('posts', 'login','search'));
-    }
+    //     return View('post.search', compact('posts', 'login','search'));
+    // }
     public function store(Request $request){
         $search = $request->input('search');
        
-        $posts = DB::table('posts')->where('title','LIKE','%'.$search.'%')->Paginate(1);
+        $posts = DB::table('posts')->where('title','LIKE','%'.$search.'%')->Paginate(3);
         
         $login=auth()->user();
     

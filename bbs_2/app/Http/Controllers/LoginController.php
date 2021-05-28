@@ -11,6 +11,7 @@ use Validator;
 class LoginController extends Controller{
  
     public function index(){
+        \Auth::logout();
         return view('login.login');
     }
     

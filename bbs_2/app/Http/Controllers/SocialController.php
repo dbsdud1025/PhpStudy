@@ -24,41 +24,24 @@ class SocialController extends Controller
             'socialid'=> $user->getId(),
             ])->first();
             
-            if (!$userToLogin){
+        if (!$userToLogin){
                 User::create([
                     'provider'=> $provider,
                     'socialid'=> $user->getId(),
                     'token'=> $user->token,
                     'name'=>$user->getName(),
                 ]);
-            }
-            \Auth::login($userToLogin, true);
+                $userToLogin=User::where([
+                    'provider'=> $provider,
+                    'socialid'=> $user->getId(),
+                    ])->first();
+                   
+        }  
+        \Auth::guard()->login($userToLogin,$a=true);
+        return  redirect() -> route('post.index');
 
-            // $posts= Post::orderBy('created_at', 'desc')->paginate(5);
-            // $login=auth()->user();
-            // return view('post.index', compact('posts', 'login'));
-        
-            return redirect('/post');
-    //     if ($user = User::where('email'," $socialUser->getEmail()")->first()) {
-    //         $this->guard()->login($user, true);
-
-    //         return $this->sendLoginResponse($request);
-    //     }
-
-    //     return "$socialUser->getEmail()";
+  
         
     }
 
-    // protected function register(Request $request, SocialUser $socialUser)
-    // {
-    //     event(new Registered($user = User::create($socialUser->getRaw())));
-    //     $user->name="a";
-    //     $user->email_verified_at = $user->freshTimestamp();
-    //     $user->remember_token = Str::random(60);
-    //     $user->save();
-
-    //     $this->guard()->login($user, true);
-
-    //     return $this->sendLoginResponse($request);
-    // }
 }
